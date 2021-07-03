@@ -27,7 +27,7 @@ function eventListeners(){
 
 function newElement(){
     if(task.value.trim()!==""){
-        const newTask=`<li>${task.value}<a class="close float-right border-0" class=""><i class="fa fa-remove"></i></a></li>`
+        const newTask=`<li>${task.value}<a class="close float-right border-0" class=""><i class="fas fa-times"></i></a></li>`
         taskListElement.innerHTML=taskListElement.innerHTML+newTask
         task.value=""
         toastBody.innerHTML=`
