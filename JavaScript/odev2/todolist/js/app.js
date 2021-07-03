@@ -5,7 +5,8 @@ const toast=document.querySelector(".toast")
 const toastHeader=document.querySelector(".toast-header strong")
 const toastBody=document.querySelector(".toast-body")
 const toastSuccessMessage="Todo başarıyla eklendi"
-const toastErrorMessage=" Hata! Lütfen kontrol ederek yeniden ekleyiniz."
+const toastErrorMessage="Hata! Lütfen kontrol ederek yeniden ekleyiniz."
+const toastDeleteMessage="Todo Başarıyla silindi."
 
 const option={
     animation:true,
@@ -19,18 +20,10 @@ const errorMessage=``
 eventListeners()
 function eventListeners(){
     taskListElement.addEventListener("click",deleteTodo)
-    taskListElement.addEventListener("click",checkedTodo)
 }
 
-function checkedTodo(e){
-    if(e.target.className==="checked"){
-        e.target.classList.remove("checked")
-    }
-    else{
-         e.target.classList.add("checked")
-    }
-   
-}
+
+// TODO Add, Delete, Checked
 
 function newElement(){
     if(task.value.trim()!==""){
@@ -53,8 +46,29 @@ function newElement(){
 }
 
 function deleteTodo(e) {
-    if(e.target.className==="fa fa-remove")
+    
+    if(e.target.className==="fas fa-times")
     {
         e.target.parentElement.parentElement.remove()
+        toastBody.innerHTML=`
+        ${toastDeleteMessage}
+          <i class="fas  fa-thumbs-up text-info pl-1"></i>
+        `
+        toastElement.show()
+    }
+    else{
+        checkedTodo(e)
     }
   }
+
+  function checkedTodo(e){
+    if(e.target.className==="checked"){
+         e.target.classList.remove("checked")
+     }
+     else{
+          e.target.classList.add("checked")
+     }
+    
+ }
+
+ //Todo LocalStorage Add, Delete, GetAll
