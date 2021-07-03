@@ -10,10 +10,10 @@ const toastDeleteMessage="Todo Başarıyla silindi."
 
 const option={
     animation:true,
-    delay:5000
+    delay:2000
 }
 const toastElement=new bootstrap.Toast(toast,option)
-
+toast.style.display="none"
 const successMessage=``
 const errorMessage=``
 
@@ -42,6 +42,7 @@ function newElement(){
         <i class="fas fa-frown text-danger"></i>
         `
     }
+    toast.style.display="block"
     toastElement.show()
 }
 
@@ -54,7 +55,9 @@ function deleteTodo(e) {
         ${toastDeleteMessage}
           <i class="fas  fa-thumbs-up text-info pl-1"></i>
         `
+        toast.style.display="block"
         toastElement.show()
+        
     }
     else{
         checkedTodo(e)
