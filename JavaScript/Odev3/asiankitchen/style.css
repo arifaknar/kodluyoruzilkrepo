@@ -14,23 +14,25 @@ h2 {
   font-size: 3rem;
   text-align: center;
   color: #ff6a23;
+  
 }
 .menu {
-  margin-top: 20px;
+  margin-top: 4rem;
 }
 
 .btn-container {
   display: flex;
+  margin-top: 3rem;
   justify-content: center;
   align-items: center;
-  margin: 40px 0;
+  
 }
 .btn-item {
   margin-left: 15px;
 }
 
 .photo {
-  width: 30%;
+  min-width: 15rem;
   max-height: 175px;
   object-fit: cover;
   border: 0.25rem solid black;
@@ -56,4 +58,12 @@ h4 {
 
 .menu-text {
   padding-top: 20px;
+}
+#menu{
+  background-color: #f1f5f8 !important;
+  
+}
+#productList{
+  margin-top: 2rem;
+  
 }
