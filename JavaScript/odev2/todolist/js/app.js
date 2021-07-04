@@ -57,6 +57,7 @@ function newElement(){
      else{
           e.target.classList.add("checked")
      }
+    //  
     
  }
 
