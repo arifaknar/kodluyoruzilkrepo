@@ -48,23 +48,7 @@ function newElement(){
     toastElement.show()
 }
 
-function deleteTodoToUI(e) {
-    
-    if(e.target.id==="delete-item")
-    {   console.log(e.target.parentElement.parentElement.textNode)
-        e.target.parentElement.parentElement.remove()
-        toastBody.innerHTML=`
-        ${toastDeleteMessage}
-          <i class="fas  fa-thumbs-up text-info pl-1"></i>
-        `
-        toast.style.display="block"
-        toastElement.show()
-        
-    }
-    else{
-        checkedTodo(e)
-    }
-  }
+
 //Checked İşlemi
   function checkedTodo(e){
     if(e.target.className==="checked"){
@@ -92,11 +76,21 @@ function deleteTodoToUI(e) {
        todoList.innerHTML=todoList.innerHTML+newTask
     })
  }
- //Seçilen todoyu arayüzden silme
+ //Seçilen todoyu arayüzden ve storagedan silme
  function deleteItem(e){
-    if (e.target.id="delete-item") {
-        e.target.parentElement.parentElement.remove();
+    if (e.target.id==="delete-item") {
+        e.target.parentElement.parentElement.remove()
         deleteTodoFromStorage(e.target.parentElement.parentElement.textContent.trim());
+
+        toastBody.innerHTML=`
+        ${toastDeleteMessage}
+          <i class="fas  fa-thumbs-up text-info pl-1"></i>
+        `
+        toast.style.display="block"
+        toastElement.show()
+    }
+    else{
+        checkedTodo(e)
     }
 
     
